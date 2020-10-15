@@ -20,10 +20,10 @@ require 'Post.php';
         {
             ?>
             <div>
-                <h2><?=htmlspecialchars($post['title']);?></h2>
-                <p><?=htmlspecialchars($post['content']);?></p>
-                <p><?=htmlspecialchars($post['author']);?></p>
-                <p><?=htmlspecialchars($post['createdAt']);?></p>
+                <h2><a href="single.php?postId=<?=htmlspecialchars($post->id);?>"></a><?=htmlspecialchars($post->title);?></h2>
+                <p><?=htmlspecialchars($post->content);?></p>
+                <p><?=htmlspecialchars($post->author);?></p>
+                <p><?=htmlspecialchars($post->createdAt);?></p>
             </div>
             <br>
             <?php

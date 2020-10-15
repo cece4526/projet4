@@ -1,14 +1,12 @@
 <?php
 
-class Post{
+class Post extends DataBase{
     public function getAllPosts(){
-        $db = new DataBase();
-        $connection = $db->getConnection();
-        $result = $connection->query('SELECT id, title, content, author, createdAt FROM article ORDER BY id DESC');
-        return $result;
+        $sql = 'SELECT id, title, content, author, createdAt FROM article ORDER BY id DESC';
+        return $this->createQuery($sql);
     }
-    public function onePost(){
-        $db = new DataBase();
-        $connection = $db->getConnection();
+    public function getOnePost($postId){
+        $sql = 'SELECT id, title, content, author, createdAt FROM article WHERE id = ?';
+        return $this->createQuery($sql,[$postId]);
     }
 }
