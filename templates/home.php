@@ -1,7 +1,7 @@
 <?php
 //On inclut le fichier dont on a besoin
-require 'DataBase.php';
-require 'Post.php';
+require '../src/DAO/DAO.php';
+require '../src/DAO/ArticleDAO.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -14,21 +14,21 @@ require 'Post.php';
         <h1>Mon blog</h1>
         <p>En construction</p>
         <?php
-        $post = new Post();
-        $allPosts = $post->getAllPosts();
-        while($post = $allPosts->fetch())
+        $article = new \App\src\DAO\ArticleDAO();;
+        $allArticles = $article->getAllArticles();
+        while($article = $allArticles->fetch())
         {
             ?>
             <div>
-                <h2><a href="single.php?postId=<?=htmlspecialchars($post->id);?>"></a><?=htmlspecialchars($post->title);?></h2>
-                <p><?=htmlspecialchars($post->content);?></p>
-                <p><?=htmlspecialchars($post->author);?></p>
-                <p><?=htmlspecialchars($post->createdAt);?></p>
+                <h2><a href="single.php?articleId=<?=htmlspecialchars($article->id);?>"></a><?=htmlspecialchars($article->title);?></h2>
+                <p><?=htmlspecialchars($article->content);?></p>
+                <p><?=htmlspecialchars($article->author);?></p>
+                <p><?=htmlspecialchars($article->createdAt);?></p>
             </div>
             <br>
             <?php
         }
-        $post->closeCursor();
+        $allArticles->closeCursor();
         ?>
     </div>
 </body>

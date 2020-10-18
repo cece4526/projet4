@@ -1,6 +1,7 @@
 <?php
-require 'DataBase.php';
-require 'Post.php';
+require '../src/DAO/DAO.php';
+require '../src/DAO/ArticleDAO.php';
+require '../src/DAO/commentDAO.php';
 ?>
 
 <!DOCTYPE html>
@@ -14,21 +15,36 @@ require 'Post.php';
         <h1>Mon blog</h1>
         <p>EN construction</p>
         <?php
-        $post = new Post;
-        $allPosts = $post->getOnePost(1);
-        $post = $allPosts->fetch();
+        $article = new \App\src\DAO\ArticleDAO();;
+        $allArticles = $article->getOneArticle(1);
+        $article = $allArticles->fetch();
         ?>
         <div>
-            <h2><?=htmlspecialchars($post->title);?></h2>
-            <p><?= htmlspecialchars($post->content);?></p>
-            <p><?= htmlspecialchars($post->author);?></p>
-            <p>Créé le : <?= htmlspecialchars($post->createdAt);?></p>
+            <h2><?=htmlspecialchars($article->title);?></h2>
+            <p><?= htmlspecialchars($article->content);?></p>
+            <p><?= htmlspecialchars($article->author);?></p>
+            <p>Créé le : <?= htmlspecialchars($article->createdAt);?></p>
         </div>
         <br>
         <?php
-        $allPosts->closeCursor();
+        $allArticles->closeCursor();
         ?>
         <a href="home.php">Retour à l'accueil</a>
+        <div id="comments" class="text-left" style="margin-left: 50px;">
+            <h3>Commentaires</h3>
+            <?php
+                $comment = new \App\src\DAO\CommentDAO();
+                $allComments = $comment->getCommentsFromArticle($_GET['articleId']);
+                while($comment = $allComments->fetch()){
+                    ?>
+                    <h4><?= htmlspecialchars($comment->pseudo);?></h4>
+                    <p><?=htmlspecialchars($comment->content);?></p>
+                    <p>Posté le <?= htmlspecialchars($comment->createdAt);?></p>
+                    <?php
+                }
+                $allComments->closeCursor();
+            ?>
+        </div>
     </div>
 </body>
 </html>

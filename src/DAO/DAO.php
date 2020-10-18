@@ -1,6 +1,9 @@
 <?php
+namespace App\src\DAO;
+use PDO;
+use Exception;
 
-abstract class DataBase 
+abstract class DAO 
 
 {
     const DB_HOST = 'mysql:host=localhost;dbname=blog;charset=utf8';
@@ -21,13 +24,14 @@ abstract class DataBase
         try{
             $this->connection = new PDO(self::DB_HOST,self::DB_USER,self::DB_PASS);
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            return this->connection;
+            return $this->connection;
+        }
+        //On lève une erreur si la connexion échoue
+        catch(Execption $errorConnection){
+            die('Erreur de connection:'.$errorConnection->getMessage());
         }
     }
-    //On lève une erreur si la connexion échoue
-    catch(Execption $errorConnection){
-        die('Erreur de connection:'.$errorConnection->getMessage());
-    }
+    
     protected function createQuery($sql, $parameters = null){
         if($parameters){
             $result = $this->checkConnection()->prepare($sql);
