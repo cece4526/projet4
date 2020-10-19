@@ -1,7 +1,7 @@
 <?php
 //On inclut le fichier dont on a besoin
-require '../src/DAO/DAO.php';
-require '../src/DAO/ArticleDAO.php';
+require '../vendor/autoload.php';
+use App\src\DAO\ArticleDAO;
 ?>
 <!DOCTYPE html>
 <html lang="fr">
