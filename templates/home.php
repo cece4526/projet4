@@ -1,6 +1,3 @@
-<?php
-use App\src\DAO\ArticleDAO;
-?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,8 +9,7 @@ use App\src\DAO\ArticleDAO;
         <h1>Mon blog</h1>
         <p>En construction</p>
         <?php
-        $article = new \App\src\DAO\ArticleDAO();;
-        $allArticles = $article->getAllArticles();
+       
         while($article = $allArticles->fetch())
         {
             ?>
