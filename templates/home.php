@@ -1,6 +1,4 @@
 <?php
-//On inclut le fichier dont on a besoin
-require '../vendor/autoload.php';
 use App\src\DAO\ArticleDAO;
 ?>
 <!DOCTYPE html>
@@ -20,7 +18,7 @@ use App\src\DAO\ArticleDAO;
         {
             ?>
             <div>
-                <h2><a href="single.php?articleId=<?=htmlspecialchars($article->id);?>"></a><?=htmlspecialchars($article->title);?></h2>
+                <h2><a href="../public/index.php?route=article&articleId=<?=htmlspecialchars($article->id);?>"></a><?=htmlspecialchars($article->title);?></h2>
                 <p><?=htmlspecialchars($article->content);?></p>
                 <p><?=htmlspecialchars($article->author);?></p>
                 <p><?=htmlspecialchars($article->createdAt);?></p>
