@@ -2,21 +2,28 @@
 
 namespace App\src\controller;
 use App\src\DAO\ArticleDAO;
+use App\src\DAO\CommentDAO;
 
 class FrontController{
 
+    private $articleDAO;
+    private $commentDAO;
+
+    public function __construct()
+    {
+        $this->articleDAO = new ArticleDAO();
+        $this->commentDAO = new CommentDAO();
+    }
+
     public function home()
     {
-        $article = new ArticleDAO();
-        $allArticles = $article->getAllArticles();
+        $allArticles = $this->articleDAO->getAllArticles();
         require '../templates/home.php';
     }
     public function article($articleId)
     {
-        $article = new ArticleDAO();
-        $allArticles = $article->getOneArticle($articleId);
-        $comment = new CommentDAO();
-        $allComments = $comment->getCommentsFromArticle($_GET['articleId']);
-        require '../templates/single.php'
+        $allArticles = $this->articleDAO->getOneArticle($articleId);
+        $allComments = $this->commentDAO->getCommentsFromArticle($articleId);
+        require '../templates/single.php';
     }
 }

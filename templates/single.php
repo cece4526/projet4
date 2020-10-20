@@ -1,9 +1,3 @@
-<?php
-require '../vendor/autoload.php';
-use \App\src\DAO\ArticleDAO;
-use \App\src\DAO\CommentDAO;
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>

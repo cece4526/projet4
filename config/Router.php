@@ -2,29 +2,37 @@
 
 namespace App\config;
 use App\src\controller\FrontController;
+use App\src\controller\ErrorController;
 use Exception;
 
 class Router{
+
+    private $frontController;
+    private $errorController;
+
+    public function __construct()
+    {
+        $this->frontController = new FrontController();
+        $this->errorController = new ErrorController();   
+    }
 
     public function run(){
         try{
 
             if(isset($_GET['route'])){
                 if($_GET['route'] === 'article'){
-                    $frontController = new FrontController();
-                    $frontController->article($_GET['articleId']);
+                    $this->frontController->article($_GET['articleId']);
                 }
                 else{
-                    echo 'page inconue';
+                    $this->errorController->errorNotFound();
                 }
                 }
             else{
-                $frontController = new FrontController();
-                $frontController->home();
+                $this->frontController->home();
             }
         }
         catch(Exception $e){
-            echo 'Erreur';
+            $this->errorController->errorServer();
         }
     }
 }
