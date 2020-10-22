@@ -22,7 +22,7 @@ class FrontController{
     }
     public function article($articleId)
     {
-        $allArticles = $this->articleDAO->getOneArticle($articleId);
+        $article = $this->articleDAO->getOneArticle($articleId);
         $allComments = $this->commentDAO->getCommentsFromArticle($articleId);
         require '../templates/single.php';
     }

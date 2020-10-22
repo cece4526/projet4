@@ -2,7 +2,8 @@
 
 namespace App\src\model;
 
-class Article{
+class Comment
+{
     /**
      * @var int
      */
@@ -11,17 +12,12 @@ class Article{
     /**
      * @var string
      */
-    private $title;
+    private $pseudo;
 
     /**
      * @var string
      */
     private $content;
-
-    /**
-     * @var string
-     */
-    private $author;
 
     /**
      * @var \DateTime
@@ -45,15 +41,15 @@ class Article{
     /**
      * @return string
      */
-    public function getTitle(){
-        return $this->title;
+    public function getPseudo(){
+        return $this->pseudo;
     }
 
     /**
-     * @param string $title
+     * @param string $pseudo
      */
-    public function setTitle($title){
-        $this->title = $title;
+    public function setPseudo($pseudo){
+        $this->pseudo = $pseudo;
     }
 
     /**
@@ -68,20 +64,6 @@ class Article{
      */
     public function setContent($content){
         $this->content = $content;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAuthor(){
-        return $this->author;
-    }
-
-    /**
-     * @param string $author
-     */
-    public function setAuthor($author){
-        $this->author = $author;
     }
 
     /**

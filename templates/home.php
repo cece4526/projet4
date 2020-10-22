@@ -10,19 +10,18 @@
         <p>En construction</p>
         <?php
        
-        while($article = $allArticles->fetch())
+        foreach($allArticles as $article)
         {
             ?>
             <div>
-                <h2><a href="../public/index.php?route=article&articleId=<?=htmlspecialchars($article->id);?>"></a><?=htmlspecialchars($article->title);?></h2>
-                <p><?=htmlspecialchars($article->content);?></p>
-                <p><?=htmlspecialchars($article->author);?></p>
-                <p><?=htmlspecialchars($article->createdAt);?></p>
+                <h2><a href="../public/index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>"></a><?=htmlspecialchars($article->getTitle());?></h2>
+                <p><?=htmlspecialchars($article->getContent());?></p>
+                <p><?=htmlspecialchars($article->getAuthor());?></p>
+                <p><?=htmlspecialchars($article->getCreatedAt());?></p>
             </div>
             <br>
             <?php
         }
-        $allArticles->closeCursor();
         ?>
     </div>
 </body>
