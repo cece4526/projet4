@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <title>Mon blog</title> 
-</head>
-<body>
-    <div>
+<?php $this->title ="Article"; ?>
+
         <h1>Mon blog</h1>
         <p>EN construction</p>
             <h2><?=htmlspecialchars($article->getTitle());?></h2>
@@ -27,6 +21,3 @@
                 }
             ?>
         </div>
-    </div>
-</body>
-</html>
