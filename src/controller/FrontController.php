@@ -22,7 +22,7 @@ class FrontController{
     {
         $allArticles = $this->articleDAO->getAllArticles();
         return $this->view->render('home',[
-            'allarticles' => $allArticles 
+            'allArticles' => $allArticles 
         ]);
     }
     public function article($articleId)
