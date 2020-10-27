@@ -1,11 +1,11 @@
 <?php
 namespace App\src\DAO;
+use App\config\Parameter;
 use App\src\model\Article;
 
 class ArticleDAO extends DAO{
 
-    private function buildObject ($row)
-    {
+    private function buildObject ($row){
         $article = new Article();
         $article->setId($row['id']);
         $article->setTitle($row['title']);
@@ -33,9 +33,17 @@ class ArticleDAO extends DAO{
         return $this->buildObject($article);
     }
 
-    public function addArticle($article){
-        extract($article);
-        $sql = 'INSERT INTO article (title, content, author, createdAt) VALUE (?,?,?,NOW())';
-        $this->createQuery($sql,[$title, $content, $author]);
+    public function addArticle(Parameter $post){
+        $sql = 'INSERT INTO article (title, content, author, createdAt) VALUES (?, ?, ?, NOW())';
+        $this->createQuery($sql, [$post->get('title'), $post->get('content'), $post->get('author')]);
+    }
+    public function editArticle(Parameter $post, $articleId){
+        $sql = 'UPDATE article SET title=:title, content=:content, author=:author WHERE id=:articleId';
+        $this->createQuery($sql, [
+            'title' => $post->get('title'),
+            'content' => $post->get('content'),
+            'author' => $post->get('author'),
+            'articleId' => $articleId
+        ]);
     }
 }
