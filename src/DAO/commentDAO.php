@@ -16,7 +16,7 @@ class CommentDAO extends DAO{
     }
 
     public function getCommentsFromArticle($articleId){
-        $sql = 'SELECT id, pseudo, content, createdAt FROM comment WHERE article_id = ? ORDER BY createdAt DESC';
+        $sql = 'SELECT id, pseudo, content, createdAt, flag FROM comment WHERE article_id = ? ORDER BY createdAt DESC';
         $result = $this->createQuery($sql, [$articleId]);
         $allComments = [];
         foreach($result as $row){
@@ -33,5 +33,24 @@ class CommentDAO extends DAO{
     public function flagComment($commentId){
         $sql = 'UPDATE comment SET flag = ? WHERE id = ?';
         $this->createQuery($sql, [1, $commentId]);
+    }
+    public function unflagComment($commentId){
+        $sql = 'UPDATE comment SET flag = ? WHERE id = ?';
+        $this->createQuery($sql, [0, $commentId]);
+    }
+    public function deleteComment($commentId){
+        $sql = 'DELETE FROM comment WHERE id = ?';
+        $this->createQuery($sql, [$commentId]);
+    }
+    public function getFlagComments(){
+        $sql = 'SELECT id, pseudo, content, createdAt, flag FROM comment WHERE flag = ? ORDER BY createdAt DESC';
+        $result = $this->createQuery($sql, [1]);
+        $comments = [];
+        foreach ($result as $row) {
+            $commentId = $row['id'];
+            $comments[$commentId] = $this->buildObject($row);
+        }
+        $result->closeCursor();
+        return $comments;
     }
 }

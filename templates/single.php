@@ -3,7 +3,7 @@
         <h1>Mon blog</h1>
         <p>EN construction</p>
             <h2><?=htmlspecialchars($article->getTitle());?></h2>
-            <p><?= htmlspecialchars($article->getContent());?></p>
+            <p><?= strip_tags($article->getContent(), '<br><strong><em><p>');?></p>
             <p><?= htmlspecialchars($article->getAuthor());?></p>
             <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
         </div>
@@ -23,8 +23,20 @@
                     <h4><?= htmlspecialchars($comment->getPseudo());?></h4>
                     <p><?=htmlspecialchars($comment->getContent());?></p>
                     <p>Posté le <?= htmlspecialchars($comment->getCreatedAt());?></p>
-                    <p><a href="../public/index.php?route=flagComment&commentId=<?= $comment->getId(); ?>">Signaler le commentaire</a></p>
                     <?php
+                    if($comment->isFlag()) {
+                        ?>
+                        <p>Ce commentaire a déjà été signalé</p>
+                        <?php
+                    } else {
+                        ?>
+                        <p><a href="../public/index.php?route=flagComment&commentId=<?= $comment->getId(); ?>">Signaler le commentaire</a></p>
+                        <?php
+                    }
+                    ?>
+                    <p><a href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer le commentaire</a></p>
+                    <br>
+                   <?php
                 }
             ?>
         </div>

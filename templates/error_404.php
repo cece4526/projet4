@@ -4,7 +4,7 @@
   <main>
     <h1>Sorry!</h1>
     <p>
-      la gpage rechercher n'existe pas
+      la page rechercher n'existe pas
     </p>
     <button>retour en arriere</button>
   </main>
