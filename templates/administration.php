@@ -5,6 +5,10 @@
 <?=$this->session->show('add_article');?>
 <?= $this->session->show('edit_article'); ?>
 <?= $this->session->show('delete_article'); ?>
+<?= $this->session->show('add_comment'); ?>
+<?= $this->session->show('flag_comment'); ?>
+<?= $this->session->show('delete_comment'); ?>
+<?= $this->session->show('delete_user'); ?>
 <h2>Articles</h2>
 <a href="../public/index.php?route=addArticle">Nouvel article</a>
 <table>
@@ -87,3 +91,5 @@
         <?php
     }
     ?>
+</table>    
+<a href="../public/index.php">Retour à l'accueil</a>

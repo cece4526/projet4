@@ -24,5 +24,6 @@
     <div id="content">
         <?= $content ?>
     </div>
+    <script type="module" src="./projet4/public/js/main.js"></script>
 </body>
 </html>

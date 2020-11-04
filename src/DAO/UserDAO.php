@@ -3,6 +3,7 @@
 namespace App\src\DAO;
 
 use App\config\Parameter;
+use App\src\model\User;
 
 class UserDAO extends DAO{
     private function buildObject($row){
