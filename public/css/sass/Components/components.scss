@@ -1,0 +1,17 @@
+td{
+    padding: 0.4em;
+    border: 1px solid black;
+}
+th[scope="row"]{
+        background-color: $tdColor;
+}
+#button_menu{
+    border: 1px solid $button;
+    background-color: $button;
+    span{
+        display: block;
+    }
+}
+.button{
+    padding: 0.1em;
+}

@@ -1,5 +1,5 @@
 export class Session{
-    constructor{
+    constructor(){
         this.login = document.getElementById('login');
         this.dataSession = {};
     }
@@ -7,18 +7,20 @@ export class Session{
         this.loginSave();
         this.preremplir();
     }
-    loginSave{
+    loginSave(){
         if(!sessionStorage){
             return false;
         }
-        this dataSession['login'] = this.login;
+        this.login.addEventListener("keyup",(e) =>{
+            this.dataSession['Login'] = this.login.value;
+            localStorage.setItem('Login' ,this.login.value);
+        });
+        
     }
     preremplir(){
+        let dataStorage = localStorage.getItem('Login');
         if(dataStorage != undefined){
-            let login = JSON.parse(dataSession).login;
-            if(login != undefined && login != null){
-                this.login = login;
-            }
+                this.login.value = dataStorage;
         }
     }
 }

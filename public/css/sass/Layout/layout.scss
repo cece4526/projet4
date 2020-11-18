@@ -1,0 +1,23 @@
+
+header{
+    background-color: $header;
+    color: beige;
+    h1,h2{
+        text-align: center;
+    }
+}
+#color{
+    &_body{
+        background-color: $body;
+    }
+    &_article{
+        background-color: $body;
+        border: none;
+    }
+}
+.card_home{
+    &_width{
+        border-radius: 5px;
+        background-color: rgb(245, 245, 245);
+    }
+}

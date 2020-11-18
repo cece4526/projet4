@@ -44,11 +44,7 @@ class UserDAO extends DAO{
         $sql = 'SELECT user.id, user.role_id, user.password, role.name FROM user INNER JOIN role ON role.id = user.role_id WHERE pseudo = ?';
         $data = $this->createQuery($sql, [$post->get('pseudo')]);
         $result = $data->fetch();
-        $isPasswordValid = password_verify($post->get('password'), $result['password']);
-        return [
-            'result' => $result,
-            'isPasswordValid' => $isPasswordValid
-        ];
+        return $result;
     }
     public function updatePassword(Parameter $post, $pseudo){
         $sql = 'UPDATE user SET password = ? WHERE pseudo = ?';

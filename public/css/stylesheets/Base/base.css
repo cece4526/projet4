@@ -1,0 +1,19 @@
+/* line 1, ../../sass/Base/base.scss */
+body, html {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  justify-content: center;
+}
+
+/* line 8, ../../sass/Base/base.scss */
+html {
+  margin: auto;
+  display: flex;
+}
+
+/* line 12, ../../sass/Base/base.scss */
+body {
+  width: 90%;
+}

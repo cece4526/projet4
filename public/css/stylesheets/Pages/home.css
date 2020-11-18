@@ -1,0 +1,20 @@
+/* line 1, ../../sass/Pages/home.scss */
+#menu_dir {
+  justify-content: flex-end;
+}
+
+/* line 4, ../../sass/Pages/home.scss */
+.menu_dir {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* line 9, ../../sass/Pages/home.scss */
+.card_home_center {
+  align-items: center;
+}
+
+/* line 12, ../../sass/Pages/home.scss */
+.card_home_width {
+  width: 50%;
+}

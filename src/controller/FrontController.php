@@ -65,7 +65,8 @@ class FrontController extends Controller{
     }
     public function login(Parameter $post){
         if($post->get('submit')) {
-            $result = $this->userDAO->login($post);
+            $user = $this->userDAO->login($post);
+            $result = $this->checkLogin($post, $user);
             if($result && $result['isPasswordValid']) {
                 $this->session->set('login', 'Content de vous revoir');
                 $this->session->set('id', $result['result']['id']);
@@ -81,5 +82,18 @@ class FrontController extends Controller{
             }
         }
         return $this->view->render('login');
+    }
+    public function checkLogin(Parameter $post, $result){
+        if ($result !== false){
+            $isPasswordValid = password_verify($post->get('password'), $result['password']);
+            return [
+                'result' => $result,
+                'isPasswordValid' => $isPasswordValid
+            ];
+        }
+        return [
+            'result' => false,
+            'isPasswordValid' => false
+        ];
     }
 }
