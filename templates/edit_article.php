@@ -14,8 +14,7 @@
         },
         menubar: 'favs file edit view insert format tools table help'
       });</script>
-<h1>Mon blog</h1>
-<p>En construction</p>
+<h3>Editer un article</h3>
 <div>
     <?php include('form_article.php');?>
     <a href="../public/index.php">Retour à l'accueil</a>

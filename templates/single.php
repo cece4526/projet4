@@ -1,7 +1,5 @@
 <?php $this->title ="Article"; ?>
 
-        <h1>Mon blog</h1>
-        <p>EN construction</p>
             <h2><?=htmlspecialchars($article->getTitle());?></h2>
             <p><?= strip_tags($article->getContent(), '<br><strong><em><p>');?></p>
             <p><?= htmlspecialchars($article->getAuthor());?></p>

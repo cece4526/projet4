@@ -6,6 +6,6 @@
     <p>
       la page rechercher n'existe pas
     </p>
-    <button>retour en arriere</button>
+    <button>retour en arriere<a href="../public/index.php"></a></button>
   </main>
 </div>

@@ -16,5 +16,11 @@
 
 /* line 12, ../../sass/Pages/home.scss */
 .card_home_width {
-  width: 50%;
+  width: 70%;
+}
+@media screen and (max-width: 1024px) {
+  /* line 12, ../../sass/Pages/home.scss */
+  .card_home_width {
+    width: 100%;
+  }
 }
