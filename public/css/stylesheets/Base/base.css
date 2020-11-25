@@ -17,3 +17,10 @@ html {
 body {
   width: 90%;
 }
+
+/* line 15, ../../sass/Base/base.scss */
+#content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -24,3 +24,24 @@
     width: 100%;
   }
 }
+
+/* line 19, ../../sass/Pages/home.scss */
+.card_home_width {
+  width: 70%;
+}
+@media screen and (max-width: 1024px) {
+  /* line 19, ../../sass/Pages/home.scss */
+  .card_home_width {
+    width: 100%;
+  }
+}
+/* line 25, ../../sass/Pages/home.scss */
+.card_home_center {
+  align-items: center;
+}
+/* line 28, ../../sass/Pages/home.scss */
+.card_home_border {
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 3px #999;
+}

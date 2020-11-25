@@ -18,6 +18,13 @@ body {
   width: 90%;
 }
 
+/* line 15, ../sass/Base/base.scss */
+#content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* line 2, ../sass/Layout/layout.scss */
 header {
   background-color: #34626c;
@@ -36,12 +43,18 @@ header h1, header h2 {
 #color_article {
   background-color: #cfd3ce;
   border: none;
+  width: 100%;
 }
 
-/* line 19, ../sass/Layout/layout.scss */
+/* line 20, ../sass/Layout/layout.scss */
 .card_home_width {
   border-radius: 5px;
   background-color: whitesmoke;
+}
+
+/* line 25, ../sass/Layout/layout.scss */
+.actions {
+  padding: 10px;
 }
 
 /* line 1, ../sass/Pages/home.scss */
@@ -71,6 +84,27 @@ header h1, header h2 {
   }
 }
 
+/* line 19, ../sass/Pages/home.scss */
+.card_home_width {
+  width: 70%;
+}
+@media screen and (max-width: 1024px) {
+  /* line 19, ../sass/Pages/home.scss */
+  .card_home_width {
+    width: 100%;
+  }
+}
+/* line 25, ../sass/Pages/home.scss */
+.card_home_center {
+  align-items: center;
+}
+/* line 28, ../sass/Pages/home.scss */
+.card_home_border {
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 3px #999;
+}
+
 /* line 1, ../sass/Components/components.scss */
 td {
   padding: 0.4em;
@@ -95,6 +129,43 @@ th[scope="row"] {
 /* line 15, ../sass/Components/components.scss */
 .button {
   padding: 0.1em;
+}
+
+/* line 18, ../sass/Components/components.scss */
+#bouton4 {
+  text-align: center;
+  padding: 6px 0 6px 0;
+  font: bold 13px Arial;
+  background: #f5f5f5;
+  color: #555;
+  border-radius: 2px;
+  width: 100px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 3px #999;
+}
+
+/* line 29, ../sass/Components/components.scss */
+#bouton5 {
+  text-align: center;
+  padding: 6px 0 6px 0;
+  font: bold 13px Arial;
+  background: #f5f5f5;
+  color: #555;
+  border-radius: 2px;
+  width: 175px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 3px #999;
+}
+
+/* line 40, ../sass/Components/components.scss */
+.message {
+  display: flex;
+  justify-content: center;
+  height: 40px;
+}
+/* line 44, ../sass/Components/components.scss */
+.message_text {
+  background: white;
 }
 
 /* line 1, ../sass/Pages/profil.scss */
