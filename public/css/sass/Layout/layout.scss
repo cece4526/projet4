@@ -17,11 +17,14 @@ header{
     }
 }
 .card_home{
-    &_width{
+    &_color{
         border-radius: 5px;
         background-color: rgb(245, 245, 245);
     }
 }
 .actions{
     padding: 10px;
+}
+.com_color{
+    background-color: white;
 }

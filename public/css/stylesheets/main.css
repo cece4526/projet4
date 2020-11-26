@@ -25,6 +25,11 @@ body {
   align-items: center;
 }
 
+/* line 20, ../sass/Base/base.scss */
+.margin {
+  margin: 5px;
+}
+
 /* line 2, ../sass/Layout/layout.scss */
 header {
   background-color: #34626c;
@@ -47,7 +52,7 @@ header h1, header h2 {
 }
 
 /* line 20, ../sass/Layout/layout.scss */
-.card_home_width {
+.card_home_color {
   border-radius: 5px;
   background-color: whitesmoke;
 }
@@ -55,6 +60,11 @@ header h1, header h2 {
 /* line 25, ../sass/Layout/layout.scss */
 .actions {
   padding: 10px;
+}
+
+/* line 28, ../sass/Layout/layout.scss */
+.com_color {
+  background-color: white;
 }
 
 /* line 1, ../sass/Pages/home.scss */
@@ -73,32 +83,21 @@ header h1, header h2 {
   align-items: center;
 }
 
-/* line 12, ../sass/Pages/home.scss */
+/* line 13, ../sass/Pages/home.scss */
 .card_home_width {
   width: 70%;
 }
 @media screen and (max-width: 1024px) {
-  /* line 12, ../sass/Pages/home.scss */
+  /* line 13, ../sass/Pages/home.scss */
   .card_home_width {
     width: 100%;
   }
 }
-
 /* line 19, ../sass/Pages/home.scss */
-.card_home_width {
-  width: 70%;
-}
-@media screen and (max-width: 1024px) {
-  /* line 19, ../sass/Pages/home.scss */
-  .card_home_width {
-    width: 100%;
-  }
-}
-/* line 25, ../sass/Pages/home.scss */
 .card_home_center {
   align-items: center;
 }
-/* line 28, ../sass/Pages/home.scss */
+/* line 22, ../sass/Pages/home.scss */
 .card_home_border {
   padding: 10px;
   border: 1px solid #ccc;
@@ -110,28 +109,32 @@ td {
   padding: 0.4em;
   border: 1px solid black;
 }
+/* line 4, ../sass/Components/components.scss */
+td[scope="col"] {
+  background-color: white;
+}
 
-/* line 5, ../sass/Components/components.scss */
+/* line 8, ../sass/Components/components.scss */
 th[scope="row"] {
   background-color: #c6b497;
 }
 
-/* line 8, ../sass/Components/components.scss */
+/* line 11, ../sass/Components/components.scss */
 #button_menu {
   border: 1px solid #839b97;
   background-color: #839b97;
 }
-/* line 11, ../sass/Components/components.scss */
+/* line 14, ../sass/Components/components.scss */
 #button_menu span {
   display: block;
 }
 
-/* line 15, ../sass/Components/components.scss */
+/* line 18, ../sass/Components/components.scss */
 .button {
   padding: 0.1em;
 }
 
-/* line 18, ../sass/Components/components.scss */
+/* line 21, ../sass/Components/components.scss */
 #bouton4 {
   text-align: center;
   padding: 6px 0 6px 0;
@@ -144,7 +147,7 @@ th[scope="row"] {
   box-shadow: 1px 1px 3px #999;
 }
 
-/* line 29, ../sass/Components/components.scss */
+/* line 32, ../sass/Components/components.scss */
 #bouton5 {
   text-align: center;
   padding: 6px 0 6px 0;
@@ -157,13 +160,13 @@ th[scope="row"] {
   box-shadow: 1px 1px 3px #999;
 }
 
-/* line 40, ../sass/Components/components.scss */
+/* line 43, ../sass/Components/components.scss */
 .message {
   display: flex;
   justify-content: center;
   height: 40px;
 }
-/* line 44, ../sass/Components/components.scss */
+/* line 47, ../sass/Components/components.scss */
 .message_text {
   background: white;
 }

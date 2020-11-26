@@ -9,12 +9,6 @@
 .card_home_center{
     align-items: center;
 }
-.card_home_width{
-    width: 70%;
-    @media screen and (max-width: 1024px){
-        width: 100%;
-    }
-}
 .card_home{
     &_width{
         width: 70%;

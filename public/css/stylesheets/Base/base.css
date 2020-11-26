@@ -24,3 +24,8 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
+/* line 20, ../../sass/Base/base.scss */
+.margin {
+  margin: 5px;
+}

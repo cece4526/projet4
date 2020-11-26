@@ -1,6 +1,9 @@
 td{
     padding: 0.4em;
     border: 1px solid black;
+    &[scope="col"]{
+        background-color: white;
+    }
 }
 th[scope="row"]{
         background-color: $tdColor;
