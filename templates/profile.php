@@ -5,10 +5,14 @@
     <div class="content_center">
         <h2><?= $this->session->get('pseudo'); ?></h2>
         <p><?= $this->session->get('role'); ?></p>
-        <a href="../public/index.php?route=updatePassword">Modifier son mot de passe</a>
+        <a id="bouton5" href="../public/index.php?route=updatePassword">Modifier son mot de passe</a>
         <br>
-        <a href="../public/index.php?route=deleteAccount">Supprimer mon compte</a>
+        <?php if($this->session->get('role') === 'admin'){ ?>
+                <p>compte admin<p>
+            <?php }else{?>
+                    <a id="bouton5" href="../public/index.php?route=deleteAccount">Supprimer mon compte</a>
+            <?php } ?>       
     </div>
     <br>
-    <a href="../public/index.php">Retour à l'accueil</a>
+    <a id="bouton4" href="../public/index.php">Accueil</a>
 </div>

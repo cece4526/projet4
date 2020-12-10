@@ -24,7 +24,7 @@ class Router{
     public function run(){
         $route = $this->request->getGet()->get('route');
         try{
-            if(isset($route)){
+            if($route !== NULL){             
                 if($route === 'article'){
                     $this->frontController->article($this->request->getGet()->get('articleId'));
                 }
@@ -45,9 +45,6 @@ class Router{
                 }
                 elseif($route === 'unflagComment'){
                     $this->backController->unflagComment($this->request->getGet()->get('commentId'));
-                }
-                elseif($route === 'deleteComment'){
-                    $this->backController->deleteComment($this->request->getGet()->get('commentId'));
                 }
                 elseif($route === 'deleteComment'){
                     $this->backController->deleteComment($this->request->getGet()->get('commentId'));

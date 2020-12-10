@@ -11,11 +11,10 @@ export class Session{
         if(!sessionStorage){
             return false;
         }
-        this.login.addEventListener("keyup",(e) =>{
+        this.login.addEventListener("keyup",() =>{
             this.dataSession['Login'] = this.login.value;
             localStorage.setItem('Login' ,this.login.value);
         });
-        
     }
     preremplir(){
         let dataStorage = localStorage.getItem('Login');

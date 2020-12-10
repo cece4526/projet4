@@ -1,4 +1,5 @@
 <?php $this->title = "Connexion"; ?>
+<script type="module" src="js/main.js"></script>
 <h3>Connexion</h3>
 <?= $this->session->show('error_login'); ?>
 <div>
